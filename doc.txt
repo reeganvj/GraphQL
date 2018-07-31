@@ -1,0 +1,79 @@
+mutation {
+  createLink(url: "http://tala.diglossia.net", description: "This is for TALA project") {
+    id
+    url
+    description
+  }
+
+query {
+  links {
+    id
+    description
+    url
+  }
+}
+
+
+query {
+  users {
+    id
+    username
+    email
+    password
+  }
+}
+
+mutation {
+  login(username : "danny", password : "123456A!"){
+   user{
+    id
+    username
+    email
+  }
+ } 
+}
+
+mutation {
+  createVote (linkId: 1) {
+    user {
+      id
+      username
+      email
+    }
+    
+    link {
+      id
+      description
+      url
+    }
+  }
+}
+
+
+query {
+  votes {
+    id
+    user {
+      id
+      username
+    }
+    link {
+      id
+      url
+    }
+  }
+}
+
+query {
+  links {
+    id
+    url
+    votes {
+      id
+      user{
+        id
+        username
+      }
+    }
+  }
+}
