@@ -1,0 +1,62 @@
+
+query {
+  tickets {
+    id
+    title
+    description
+    assignedTo
+    reportedBy
+    status
+  }
+}
+mutation {
+  createTicket (
+    title : "Internet 2"
+    description : "Issue internet 2"
+    reportedBy: "newuser"
+    assignedTo : "admin"
+    status : "new"
+  ){
+    title
+    description
+    reportedBy
+    assignedTo
+    status
+  }
+}
+
+mutation {
+  updateTicket (
+    id : 4
+    title : "Internet 2 Modified"
+    description : "Issue internet 2 modified ticket"
+    reportedBy: "newuser"
+    assignedTo : "admin"
+    status : "new"
+  ){
+    id
+    title
+    description
+    reportedBy
+    assignedTo
+    status
+  }
+}
+
+mutation {
+  DeleteTicket (
+    id : 2
+    title : "Internet"
+    description : "Issue internet"
+    reportedBy: "newuser"
+    assignedTo : "admin"
+    status : "new"
+  ){
+    id
+    title
+    description
+    reportedBy
+    assignedTo
+    status
+  }
+}
